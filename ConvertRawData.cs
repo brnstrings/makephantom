@@ -22,9 +22,10 @@ private unsafe void ConvertRawData(int width, int height ,int im)
             int b = (int)(datas24bppRgb[y * bitmap.Width * 3 + x * 3]);
             int g = (int)(datas24bppRgb[y * bitmap.Width * 3 + x * 3 + 1]);
             int r = (int)(datas24bppRgb[y * bitmap.Width * 3 + x * 3 + 2]);
-          
+
+            // Get hu value from setting
             int HU = ConvertHUValue(r, g, b, true);
-                    
+
             int byte1 = HU / 256;
             int byte2 = HU - (byte1 * 256);
 
